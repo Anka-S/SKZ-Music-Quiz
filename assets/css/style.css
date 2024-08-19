@@ -6,24 +6,171 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
 
 body {
     background: url("../images/hero-ph.jpg") no-repeat center center/cover;
     width: 100%;
     min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+}
+.desktop-header{
+    display: none;
+}
+.row {
+    margin: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding-top: 20px;
+    }
+
+.questions{
+    height: 500px;
+    padding: 10px 0;
+    background-color: #8080807d;
+}
+
+ .img-fluid {
+    width: 100%;
+    height: 15rem;
+ }
+
+.game-start {
+    margin-top: 70px;
+    margin-bottom: 3em;
+
+}
+
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #be1b2c;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #be1b2c;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #000;
+    --bs-btn-focus-shadow-rgb: 60, 153, 110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #be1b2c;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #be1b2c8c;
+    --bs-btn-disabled-border-color: #000;
+}
+
+.btn-lg {
+    --bs-btn-font-size: 1.85rem;
+    padding: 10px;
+}
+
+.footer-container  {
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    background-color: black;
 }
 
 
+#social {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+
+#social a {
+    color: #fff;
+    font-size: 20px;
+}
+
+#social a:hover {
+    color: #9e9d9bf3;
+    border: 0;
+}
 
 /* Media query: tablets and larger (540px and up) */
+
 @media screen and (min-width: 540px) {
     body {
     width: 100%;
     min-height: 100vh;
     background: url("../images/hero.jpg") no-repeat center center/cover;
+    
+}
+
+    h1 {
+        font-family: 'Bricolage Grotesque', sans-serif;
+        font-size: 100px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 50px;
     }
+
+    
+    .questions{
+        height: 700px;
+        padding: 10px 0;
+    }
+    
+     .img-fluid {
+        width: 100%;
+        height: 15rem;
+     }
+    
+    .game-start {
+        margin-top: 70px;
+        margin-bottom: 10em;
+    
+    }
+    
    
 }
 
+/* Media query: tablets and larger (1024px and up) */
 
+@media screen and (min-width: 1200px) {
+    .main-header{
+        display: none;
+    }
+    .desktop-header{
+        display: block;
+        font-size: 5rem;
+    }
+
+    .questions{
+        height: 550px;
+        padding: 10px 0;
+        margin-top: 30px;
+    }
+    
+     .img-fluid {
+        width: 100%;
+        height: 15rem;
+     }
+    
+    .game-start {
+        margin-top: 70px;
+        margin-bottom: 3em;
+    
+    }
+}
