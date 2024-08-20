@@ -64,7 +64,15 @@ h1 {
     --bs-btn-disabled-bg: #be1b2c8c;
     --bs-btn-disabled-border-color: #000;
 }
-
+.btn-outline-secondary{
+    --bs-btn-color: #17191a;
+    --bs-btn-border-color: #171917;
+    --bs-btn-bg: rgba(249, 238, 238, 0.656);
+}
+.btn-sm{
+    --bs-btn-font-size: 1rem;
+    padding: 10px;
+}
 .btn-lg {
     --bs-btn-font-size: 1.5rem;
     padding: 10px;
