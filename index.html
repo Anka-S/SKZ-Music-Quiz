@@ -27,8 +27,8 @@
         <h1 class="main-header">SKZ Music Quiz</h1>
     </header>
     <main>
-        <!-- Section for the game -->
-        <section>
+        <!-- Start page-->
+        <section id="start-page">
             <div class="container-fluid m-o pt-3">
                 <div class="row m-0">
                     <div class="col-sm-8 offset-sm-2 game">
@@ -47,30 +47,30 @@
         </section>
         <!-- Songs section -->
          <section id="songs">
-            <div>
-                <audio src="assets/songs/any.mp3"></audio>
-                <audio src="assets/songs/back-door.mp3"></audio>
-                <audio src="assets/songs/chk-chk-boom.mp3"></audio>
-                <audio src="assets/songs/christmas-evel.mp3"></audio>
-                <audio src="assets/songs/cover-me.mp3"></audio>
-                <audio src="assets/songs/deep-end.mp3"></audio>
-                <audio src="assets/songs/heaven.mp3"></audio>
-                <audio src="assets/songs/lalala.mp3"></audio>
-                <audio src="assets/songs/taste.mp3"></audio>
-                <audio src="assets/songs/topline.mp3"></audio>
+            <div >
+                <audio src="assets/songs/any.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/back-door.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/chk-chk-boom.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/christmas-evel.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/cover-me.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/deep-end.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/heaven.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/lalala.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/taste.mp3" controls type="audio"></audio>
+                <audio src="assets/songs/topline.mp3" controls type="audio"></audio>
             </div>
          </section>
-         <!-- Answer section -->
+         <!-- Game section -->
           <section id="gamePlay">
             <div class="container-fluid m-o pt-3">
                 <div class="row m-0">
                     <div class="col-sm-8 offset-sm-2 game">
-            <button class="btn btn-success btn-lg m-4">Restart</button>
+            <button class="restart btn btn-success btn-lg m-4">Restart</button>
             <div>
-                <div class="scores">Score:</div>
+                <div id="scores"><span>Score:</span></div>
                 <div id="timer">15</div>
             </div>
-            <div id="answer">
+            <div id="answers">
                 <button></button>
                 <button></button>
                 <button></button>
@@ -82,13 +82,13 @@
                 </div>
             </div>
           </section>
-          <!-- EndGame section -->
+          <!-- End of the game section -->
           <section id="endGame">
             <div class="container-fluid m-o pt-3">
                 <div class="row m-0">
                     <div class="col-sm-8 offset-sm-2 game p-5">
             <h2>Your total score ///</h2>
-            <button class="btn btn-success btn-lg m-5">Play Again!</button>
+            <button class="restart btn btn-success btn-lg m-5">Play Again!</button>
          <!-- The image for logo taken from Stick png -->
          <div class="col-12 logo"><img src="assets/images/logo.png" class="img-fluid" alt="Name of the group 'Stray Kids'"></div>
         </div>           
@@ -117,13 +117,11 @@
                 </div>
             </div>
       </footer>    
-      <script src="assets/js/script.js"></script>
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/5a75afae0c.js" crossorigin="anonymous"></script>
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
 </body>
 
 </html>
