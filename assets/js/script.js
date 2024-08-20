@@ -26,7 +26,7 @@ startGame.onclick = () => {
         startPage.style.display = 'none';
         gamePlay.style.display = 'flex';
         chooseSong();
-        // setTimeout(playNextSong, 2000);  
+        setTimeout(playNextSong, 2000);  
         scores.innerHTML = `Score: ${score}`;
         playNextSong();
       
@@ -70,18 +70,6 @@ const assignSongs = () => {
     playSongs()
 };
 
-// const tracks = [
-//         {title:"Any", file: "assets/songs/any.mp3"},
-//         {title:"Back Door", file: "assets/songs/back-door.mp3"},
-//         {title:"Chk Chk Boom", file: "assets/songs/chk-chk-boom.mp3"},
-//         {title:"Christmas Evel", file: "assets/songs/christmas-evel.mp3"},
-//         {title:"Cover Me", file: "assets/songs/cover-me.mp3"},
-//         {title:"Deep End", file: "assets/songs/deep-end.mp3"},
-//         {title:"Heaven", file: "assets/songs/heaven.mp3"},
-//         {title:"Lalala", file: "assets/songs/lalala.mp3"},
-//         {title:"Taste", file: "assets/songs/taste.mp3"},
-//         {title:"Topline", file: "assets/songs/topline.mp3"},
-//     ];
 
 const playSongs = () => {
     if (song === 1) {
@@ -188,20 +176,20 @@ answers.forEach(answer => {
     }
 }) ; 
 
-nextSong = () => {
+const nextSong = () => {
     if (turn < 7) {
         turn++
-        // timer.innerHTML = 10
+        timer.innerHTML = 15
         answers.forEach(answer => {answer.innerHTML = ''})
-        // answers.forEach(answer => {answer.style.backgroundColor = 'unset'})
+        answers.forEach(answer => {answer.style.backgroundColor = 'unset'})
         clicked = false;
         rightGivenAnswer = false;
         givenAnswer = 0;
         question = 'song'
-        // setTimeout(playNextSong, 1000)
+        setTimeout(playNextSong, 2000)
         if (turn < 6) {
             next.innerHTML = 'Next Song'
-        } else if (turn < 10){
+        } else if (turn === 7){
             next.innerHTML = 'Last Song'
         } else {
             next.innerHTML = 'End'
@@ -233,24 +221,13 @@ restart.onclick = () => {
     };
     
 
-    // answers[3].addEventListener('click', () => {
-//     answers[3].style.display = 'none'
-//     restart.style.display = 'none'
-//     nextSong()
-// });
+    answers[2].addEventListener('click', () => {
+    answers[2].style.display = 'none'
+    restart.style.display = 'none'
+    nextSong()
+});
 
-// const tracks = [
-//     {title:"Any", file: "assets/songs/any.mp3"},
-//     {title:"Back Door", file: "assets/songs/back-door.mp3"},
-//     {title:"Chk Chk Boom", file: "assets/songs/chk-chk-boom.mp3"},
-//     {title:"Christmas Evel", file: "assets/songs/christmas-evel.mp3"},
-//     {title:"Cover Me", file: "assets/songs/cover-me.mp3"},
-//     {title:"Deep End", file: "assets/songs/deep-end.mp3"},
-//     {title:"Heaven", file: "assets/songs/heaven.mp3"},
-//     {title:"Lalala", file: "assets/songs/lalala.mp3"},
-//     {title:"Taste", file: "assets/songs/taste.mp3"},
-//     {title:"Topline", file: "assets/songs/topline.mp3"},
-// ];
+
 
 
 // const runTimer = () => {
@@ -262,3 +239,5 @@ restart.onclick = () => {
 //         restart.style.display = 'block';
 //     }
 // }
+
+
