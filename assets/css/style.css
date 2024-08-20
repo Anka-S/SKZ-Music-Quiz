@@ -8,7 +8,7 @@
     box-sizing: border-box;
     /* outline: 1px solid red; */
 }
-
+/* -----------The photo used for the background taken from Peakpx */
 body {
     background: url("../images/hero-ph.jpg") no-repeat center center/cover;
     width: 100%;
@@ -24,29 +24,24 @@ h1 {
     text-align: center;
     padding-top: 10px;
 }
+
 .desktop-header{
     display: none;
 }
-.row {
-    margin: 0;
-}
 
-.container-fluid {
-    margin: 0;
-    padding-top: 20px;
-    }
-
+/* -----------Box for questions--- */
 .questions{
-    height: 500px;
+    height: 400px;
     padding: 10px 0;
     background-color: #8080807d;
 }
-
+/* --------------Logo in the box for questions */
  .img-fluid {
     width: 100%;
     height: 15rem;
  }
 
+ /* -----------Start game button */
 .game-start {
     margin-top: 70px;
     margin-bottom: 3em;
@@ -71,10 +66,12 @@ h1 {
 }
 
 .btn-lg {
-    --bs-btn-font-size: 1.85rem;
+    --bs-btn-font-size: 1.5rem;
     padding: 10px;
 }
 
+
+/* ---------------Footer */
 .footer-container  {
     height: 50px;
     width: 100%;
@@ -108,6 +105,21 @@ h1 {
     border: 0;
 }
 
+/* Media query: phones (390px and up) */
+
+@media screen and (min-width: 390px) {
+    .btn-lg {
+        --bs-btn-font-size: 1.85rem;
+        padding: 10px;
+    }
+
+    .questions{
+        height: 450px;
+        padding: 10px 0;
+        background-color: #8080807d;
+    }
+}
+
 /* Media query: tablets and larger (540px and up) */
 
 @media screen and (min-width: 540px) {
@@ -128,7 +140,7 @@ h1 {
 
     
     .questions{
-        height: 700px;
+        height: 500px;
         padding: 10px 0;
     }
     
@@ -139,14 +151,14 @@ h1 {
     
     .game-start {
         margin-top: 70px;
-        margin-bottom: 10em;
+        margin-bottom: 4em;
     
     }
     
    
 }
 
-/* Media query: tablets and larger (1024px and up) */
+/* Media query: desktop (1024px and up) */
 
 @media screen and (min-width: 1200px) {
     .main-header{
@@ -158,7 +170,7 @@ h1 {
     }
 
     .questions{
-        height: 550px;
+        height: 400px;
         padding: 10px 0;
         margin-top: 30px;
     }
