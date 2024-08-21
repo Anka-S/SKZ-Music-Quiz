@@ -97,9 +97,9 @@ Detailing the existing and planned features and the value they bring.
 
 ### Features Left to Implement
 
-- Countdown Timer
 - Show which answer was correct
-- Score how many songs left till the end of the game
+- Answer buttons will randomly change their position
+- Use API for more attractive and interesting game
 
 ## Testing 
 

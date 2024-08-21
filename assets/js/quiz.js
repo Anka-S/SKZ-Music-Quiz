@@ -8,6 +8,10 @@ const startPage = document.querySelector("#start-page");
 const endGame = document.querySelector("#endGame");
 const next = document.querySelector("#nextSong");
 const result = document.querySelector("#endGame h2");
+const songsLeftElement = document.getElementById("songsLeft");
+const totalSongs = 10;
+const countDownElement = document.getElementById("countdown");
+const initialTime = 15;
 
 let score = 0;
 let gameSongs = [];
@@ -20,6 +24,28 @@ let givenAnswer = 0;
 let rightGivenAnswer = false;
 let turn = 1;
 let currentSong;
+let countDownInterval;
+let timeLeft = initialTime;
+
+// Function for timer
+
+const startCountdown = () => {
+    timeLeft = initialTime;
+    countDownElement.innerHTML = `Timer: ${timeLeft}`;
+    countDownInterval = setInterval(() => {
+        timeLeft--;
+        countDownElement.innerHTML = `Timer: ${timeLeft}`;
+        if(timeLeft <= 0){
+            clearInterval(countDownInterval);
+            handleTimeOut();
+        }
+    },1000);
+};
+
+//This function will play next song when the time is over 
+const handleTimeOut = () => {
+    nextSong();
+    }
 
 // Start the game and transition to the gamePlay section
 startGame.forEach(button => {
@@ -27,15 +53,22 @@ button.onclick = () => {
     startPage.style.display = 'none';
     gamePlay.style.display = 'flex';
     next.innerHTML = 'Next Song';
+    updateSongsLeft();
     chooseSongs();
     scores.innerHTML = `Score: ${score}`;
     playNextSong();
 };
 });
 
+// Function for updating how many songs left till the end of the game
+const updateSongsLeft = () => {
+    const songsLeft = totalSongs - turn + 1;
+    songsLeftElement.innerHTML = `Songs left: ${songsLeft}`;
+};
+
 // Play the next song
 const playNextSong = () => {
-    assignSong();
+    assignSong();   
 };
 
 // Assign the current song based on the turn
@@ -73,6 +106,7 @@ const playSong = () => {
         // Set volume to 10% 
         currentTrack.volume = 0.1;
         prepareAnswers();
+        startCountdown();
     }
 };
 
@@ -102,6 +136,7 @@ const prepareAnswers = () => {
 answers.forEach(answer => {
     answer.onclick = () => {
         if (question === 'song' && !clicked && !rightGivenAnswer) {
+            clearInterval(countDownInterval);
             currentAnswer = answer.innerHTML;
             clicked = true;
             if (currentAnswer === rightAnswer) {
@@ -111,17 +146,11 @@ answers.forEach(answer => {
             } else {
                 answer.style.backgroundColor = 'red';
             }
+            updateSongsLeft();
             scores.innerHTML = `Score: ${score}`;
             setTimeout(nextSong, 1000);
         }
     };
-    
-
-});
-
-//  Add event listener for the "Next" button
-document.addEventListener('DOMContentLoaded', () => {
-    next.addEventListener('click', nextSong);
 });
 
 // Move to the next song or end the game
@@ -129,19 +158,12 @@ const nextSong = () => {
     if (turn < 10) { 
         turn++;
         resetForNextSong();
+        updateSongsLeft();
         setTimeout(playNextSong, 1000);
-
-        // Update the 'next' button text based on the current turn
-        if (turn < 9) {
-            next.innerHTML = 'Next Song';
-        } else if (turn === 9) {
-            next.innerHTML = 'Last Song';
-        } else if (turn <= 10) {
-            next.innerHTML = 'End';
-        }
     } else {
         stopAllTracks();
         showWinner();
+        clearInterval(countDownInterval);
     }
 };
 
@@ -162,7 +184,7 @@ const resetForNextSong = () => {
 const showWinner = () => {
     gamePlay.style.display = 'none';
     endGame.style.display = 'block';
-    result.innerHTML = `Well done! <br> You totalized ${score} points`;
+    result.innerHTML = `Well done! <br> Your total score: ${score} of 10`;
     // Save the score to local storage
     localStorage.setItem('score', score);
 };
