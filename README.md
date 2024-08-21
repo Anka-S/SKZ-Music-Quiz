@@ -20,8 +20,9 @@ The site will be presented as simple but attractive and easy to navigate.
    -  As a user, I want to see if my answer is right or wrong so I will know my progress.
    -  As a user, I want to go further when I guess the song so I don't need to wait while the song ends.
    -  As a user, I want to see my final score so I will know my result.
-   -  As a user, I want: to see which answer was correct if I chose the wrong answer so I will learn more in future.
+   -  As a user, I want: to see which answer was correct if I chose the wrong answer so I will learn more in the future.
    -  As a user, I want to have a countdown timer so I can see how much time I have for an answer.
+   -  As a user, I want to know how many songs are left till the end of the game, so I will not lose interest.
    
 
 - __Wireframes__
@@ -98,6 +99,7 @@ Detailing the existing and planned features and the value they bring.
 
 - Countdown Timer
 - Show which answer was correct
+- Score how many songs left till the end of the game
 
 ## Testing 
 
@@ -150,7 +152,7 @@ It returned scores of 98, 100, 100 & 100 on desktop devices and 89, 100, 100 & 1
 
 - The logo image goes over the game section on several devices.
 <img src = "assets/docs/testing/IphonSE.jpg">
-- The game is starting when you are clicking somewhere on the page (not only on the button "Start Game")
+
 
 ## Deployment
 

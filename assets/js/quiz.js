@@ -1,4 +1,4 @@
-const startGame = document.querySelectorAll("#start-page");
+const startGame = document.querySelectorAll("#start-button");
 const answers = document.querySelectorAll("#answers button");
 const scores = document.querySelector("#scores");
 const restart = document.querySelectorAll(".restart");
