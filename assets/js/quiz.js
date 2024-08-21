@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const nextSong = () => {
     if (turn < 10) { 
         turn++;
-        resetGameState();
         resetForNextSong();
         setTimeout(playNextSong, 500);
 
@@ -142,19 +141,6 @@ const nextSong = () => {
     }
 };
 
-// Helper function to reset the game state for the next song
-const resetGameState = () => {
-    answers.forEach(answer => {
-        answer.innerHTML = '';
-        answer.style.backgroundColor = 'unset';
-    });
-    clicked = false;
-    rightGivenAnswer = false;
-    givenAnswer = 0;
-    question = 'song';
-    stopAllTracks();
-};
-
 // Reset state for the next song
 const resetForNextSong = () => {
     answers.forEach(answer => {
@@ -164,6 +150,7 @@ const resetForNextSong = () => {
     stopAllTracks();
     clicked = false;
     rightGivenAnswer = false;
+    givenAnswer = 0;
     question = 'song';
 };
 

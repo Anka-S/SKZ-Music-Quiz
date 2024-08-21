@@ -6,7 +6,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
 }
 /* -----------The photo used for the background taken from Peakpx */
 body {
@@ -24,7 +23,8 @@ h1 {
     text-align: center;
     padding-top: 10px;
 }
-h2{
+
+h2 {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 30px;
     font-weight: 500;

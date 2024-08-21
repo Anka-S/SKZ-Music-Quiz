@@ -113,12 +113,18 @@ If this section grows too long, you may want to split it off into a separate fil
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/#validate_by_input)
+  <img src="assets/docs/HTML-validator.jpeg">
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
-
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+  <img src="assets/docs/CSS-validator.jpeg">
 - JavaScript
-   -   
+   - No errors were found when passing through the official[JSHint](https://jshint.com/)
+- LightHouse
+  - The lighthouse test is used to give a score for performance, SEO, accessibility and best practices.
+It returned scores of 98, 100, 100 & 100 respectively meaning the performance is optimised.
+<img src = "assets/docs/Lighthouse-desktop.jpeg"> 
+
 
 ### Unfixed Bugs
 
@@ -138,13 +144,16 @@ The live link can be found here - [SKZ Music Quiz](http://anka-s.github.io/skz-m
 
 ## Credits 
 
-- I take inspiration for my game from this [Music Quiz](https://anka-s.github.io/SKZ-Music-Quiz/) 
+- I take inspiration for my game from this [Music Quiz](https://github.com/Ezio2994/music-quiz/) 
 
 ### Content 
 
 - Icon for webpage created with Favicon generator (https://realfavicongenerator.net/)
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 - The CDN framework used for ready made styling was [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/download/)
+- Balsamiq used for wireframe
+- [Perplexity](https://www.perplexity.ai/) used for debugging 
+- [Miro boards](https://miro.com/app/board/uXjVK1tCs_I=/) used for plunning the work process
 
 
 ### Media
@@ -152,3 +161,5 @@ The live link can be found here - [SKZ Music Quiz](http://anka-s.github.io/skz-m
 - The photo used for the background taken from [Peakpx](https://www.peakpx.com/) 
 - The image for logo taken from [Stick png](https://www.stickpng.com/img/icons-logos-emojis/iconic-brands/stray-kids-logo)
 - Songs taken from the Internet [Archive](https://archive.org/search?query=subject%3A%22Stray+Kids%22)
+
+[SKZ Music Quiz](http://anka-s.github.io/skz-music-quiz/)
