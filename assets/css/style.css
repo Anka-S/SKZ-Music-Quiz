@@ -24,6 +24,17 @@ h1 {
     text-align: center;
     padding-top: 10px;
 }
+h2{
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 10px; 
+}
+
+.hidden-heading{
+    display: none;
+}
 
 .desktop-header{
     display: none;
@@ -38,7 +49,7 @@ h1 {
 /* --------------Logo in the box for questions */
  .img-fluid {
     width: 100%;
-    height: 15rem;
+    /* height: 15rem; */
  }
 
  /* -----------Start game button */

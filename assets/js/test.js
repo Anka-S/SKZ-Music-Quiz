@@ -241,3 +241,63 @@ restart.onclick = () => {
 // }
 
 
+// Update the next button text
+// const updateNextButton = () => {
+//     if (turn < 6) {
+//         next.innerHTML = 'Next Song';
+//     } else if (turn === 6) {
+//         next.innerHTML = 'Last Song';
+//     } else {
+//         next.innerHTML = 'End';
+//     }
+// };
+
+// const nextSong = () => {
+//     if (turn < 10) {
+//         turn++;
+//         resetForNextSong();
+//         playNextSong();
+//         updateNextButton();
+//     } else {
+//         showWinner();
+//     }
+// };
+
+
+// Play the current song and prepare answers
+// const playSong = () => {
+//     if (song >= 1 && song <= 10) {
+//         tracks[currentSong].pause();
+//         tracks[song - 1].play();
+//         prepareAnswers();
+//     }
+// };
+
+// const stopAllTracks = () => {
+//     Array.from(tracks).forEach(track => {
+//         track.pause();
+//         track.currentTime = 0; // Reset to the start
+//     });
+// };
+
+// // Play the current song and prepare answers
+// const playSong = () => {
+//     if (song >= 1 && song <= 10) {
+//         stopAllTracks(); // Stop any currently playing tracks
+
+//         // Play the new track
+//         const currentTrack = tracks[song - 1];
+//         currentTrack.play();
+//         prepareAnswers();
+//     }
+// };
+
+
+// // Play the current song and prepare answers
+// const playSong = () => {
+//     if (song >= 1 && song <= 10) {
+//         // tracks[currentSong].pause();
+//         tracks[song - 1].play();
+//         prepareAnswers();
+//     }
+// };

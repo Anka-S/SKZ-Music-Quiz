@@ -1,10 +1,10 @@
-const startGame = document.querySelector("#start-page button");
+const startGame = document.querySelectorAll("#start-page");
 const answers = document.querySelectorAll("#answers button");
 const scores = document.querySelector("#scores");
-const restart = document.querySelector(".restart");
+const restart = document.querySelectorAll(".restart");
 const tracks = document.getElementsByTagName("audio");
 const gamePlay = document.querySelector("#gamePlay");
-const startPage = document.querySelector("#start-page")
+const startPage = document.querySelector("#start-page");
 const endGame = document.querySelector("#endGame");
 const next = document.querySelector("#nextSong");
 const result = document.querySelector("#endGame h2");
@@ -19,14 +19,30 @@ let clicked = false;
 let givenAnswer = 0;
 let rightGivenAnswer = false;
 let turn = 1;
+let currentSong;
 
 // Start the game and transition to the gamePlay section
-startGame.onclick = () => {
+startGame.forEach(button => {
+button.onclick = () => {
     startPage.style.display = 'none';
     gamePlay.style.display = 'flex';
+    next.innerHTML = 'Next Song';
     chooseSongs();
     scores.innerHTML = `Score: ${score}`;
     playNextSong();
+};
+});
+
+// Play the next song
+const playNextSong = () => {
+    assignSong();
+};
+
+// Assign the current song based on the turn
+const assignSong = () => {
+    song = gameSongs[turn - 1];
+    currentSong = song;
+    playSong();
 };
 
 // Add random songs to the array
@@ -37,24 +53,24 @@ const chooseSongs = () => {
             gameSongs.push(random);
         }
     }
-    console.log(gameSongs);
+    // console.log(gameSongs);
 };
 
-// Play the next song
-const playNextSong = () => {
-    assignSong();
-};
-
-// Assign the current song based on the turn
-const assignSong = () => {
-    song = gameSongs[turn - 1];
-    playSong();
+const stopAllTracks = () => {
+    Array.from(tracks).forEach(track => {
+        track.pause();
+        track.currentTime = 0; // Reset to the start
+    });
 };
 
 // Play the current song and prepare answers
 const playSong = () => {
     if (song >= 1 && song <= 10) {
-        tracks[song - 1].play();
+        stopAllTracks(); // Stop any currently playing tracks
+
+        // Play the new track
+        const currentTrack = tracks[song - 1];
+        currentTrack.play();
         prepareAnswers();
     }
 };
@@ -106,23 +122,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Move to the next song or end the game
 const nextSong = () => {
-    console.log("Next song function called"); 
     if (turn < 10) { 
         turn++;
         resetGameState();
         resetForNextSong();
-        setTimeout(playNextSong, 2000);
+        setTimeout(playNextSong, 500);
 
         // Update the 'next' button text based on the current turn
         if (turn < 9) {
             next.innerHTML = 'Next Song';
         } else if (turn === 9) {
             next.innerHTML = 'Last Song';
-        } else {
+        } else if (turn <= 10) {
             next.innerHTML = 'End';
         }
     } else {
-        showWinner(); 
+        stopAllTracks();
+        showWinner();
     }
 };
 
@@ -136,6 +152,7 @@ const resetGameState = () => {
     rightGivenAnswer = false;
     givenAnswer = 0;
     question = 'song';
+    stopAllTracks();
 };
 
 // Reset state for the next song
@@ -144,6 +161,7 @@ const resetForNextSong = () => {
         answer.innerHTML = '';
         answer.style.backgroundColor = '';
     });
+    stopAllTracks();
     clicked = false;
     rightGivenAnswer = false;
     question = 'song';
@@ -159,15 +177,23 @@ const showWinner = () => {
 };
 
 // Restart the game
-restart.onclick = () => {
+restart.forEach(button => {
+button.onclick = () => {
     gameSongs = [];
     turn = 1;
     score = 0;
     question = 'song';
     clicked = false;
     rightGivenAnswer = false;
+    stopAllTracks();
     scores.innerHTML = `Score: ${score}`;
     endGame.style.display = 'none';
     gamePlay.style.display = 'none';
     startPage.style.display = 'flex';
+    next.innerHTML = 'Next Song';
+    answers.forEach(answer => {
+        answer.innerHTML = '';
+        answer.style.backgroundColor = '';
+    });
 };
+});
