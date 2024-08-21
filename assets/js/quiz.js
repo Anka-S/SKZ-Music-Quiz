@@ -27,6 +27,19 @@ let currentSong;
 let countDownInterval;
 let timeLeft = initialTime;
 
+// Start the game and transition to the gamePlay section
+startGame.forEach(button => {
+button.onclick = () => {
+    startPage.style.display = 'none';
+    gamePlay.style.display = 'flex';
+    next.innerHTML = 'Next Song';
+    updateSongsLeft();
+    chooseSongs();
+    scores.innerHTML = `Score: ${score}`;
+    playNextSong();
+};
+});
+
 // Function for timer
 
 const startCountdown = () => {
@@ -47,22 +60,9 @@ const handleTimeOut = () => {
     nextSong();
     }
 
-// Start the game and transition to the gamePlay section
-startGame.forEach(button => {
-button.onclick = () => {
-    startPage.style.display = 'none';
-    gamePlay.style.display = 'flex';
-    next.innerHTML = 'Next Song';
-    updateSongsLeft();
-    chooseSongs();
-    scores.innerHTML = `Score: ${score}`;
-    playNextSong();
-};
-});
-
 // Function for updating how many songs left till the end of the game
 const updateSongsLeft = () => {
-    const songsLeft = totalSongs - turn + 1;
+    const songsLeft = totalSongs - turn;
     songsLeftElement.innerHTML = `Songs left: ${songsLeft}`;
 };
 
@@ -132,26 +132,59 @@ const prepareAnswers = () => {
     rightAnswer = correct;
 };
 
-// Handle answer selection
-answers.forEach(answer => {
-    answer.onclick = () => {
-        if (question === 'song' && !clicked && !rightGivenAnswer) {
-            clearInterval(countDownInterval);
-            currentAnswer = answer.innerHTML;
-            clicked = true;
-            if (currentAnswer === rightAnswer) {
-                score++;
-                answer.style.backgroundColor = 'green';
-                rightGivenAnswer = true;
-            } else {
-                answer.style.backgroundColor = 'red';
-            }
-            updateSongsLeft();
-            scores.innerHTML = `Score: ${score}`;
-            setTimeout(nextSong, 1000);
+const handleAnswer = (answer) => {
+    if (question === 'song' && !clicked && !rightGivenAnswer) {
+        clearInterval(countDownInterval);
+        currentAnswer = answer.innerHTML;
+        clicked = true;
+        if (currentAnswer === rightAnswer) {
+            score++;
+            answer.style.backgroundColor = 'green';
+            rightGivenAnswer = true;
+        } else {
+            answer.style.backgroundColor = 'red';
         }
-    };
+        updateSongsLeft();
+        scores.innerHTML = `Score: ${score}`;        
+        setTimeout(nextSong, 1000);
+    }
+};
+
+answers.forEach(answer => {
+    let isTouch = false;
+
+    answer.addEventListener('touchstart', (e) => {
+        isTouch = true;
+        e.preventDefault(); // Prevent default touch behavior
+    });
+
+    answer.addEventListener('touchend', (e) => {
+        if (isTouch) {
+            e.preventDefault(); // Prevent default touch behavior
+            handleAnswer(answer);
+            isTouch = false;
+        }
+    });
+
+    answer.addEventListener('click', (e) => {
+        if (!isTouch) {
+            handleAnswer(answer);
+        }
+    });
 });
+
+// Modify resetForNextSong to re-enable buttons
+const resetForNextSong = () => {
+    answers.forEach(answer => {
+        answer.innerHTML = '';
+        answer.style.backgroundColor = '';
+    });  
+    stopAllTracks();
+    clicked = false;
+    rightGivenAnswer = false;
+    givenAnswer = 0;
+    question = 'song';
+};
 
 // Move to the next song or end the game
 const nextSong = () => {
@@ -165,19 +198,6 @@ const nextSong = () => {
         showWinner();
         clearInterval(countDownInterval);
     }
-};
-
-// Reset state for the next song
-const resetForNextSong = () => {
-    answers.forEach(answer => {
-        answer.innerHTML = '';
-        answer.style.backgroundColor = '';
-    });
-    stopAllTracks();
-    clicked = false;
-    rightGivenAnswer = false;
-    givenAnswer = 0;
-    question = 'song';
 };
 
 // Display the winner screen
@@ -203,7 +223,6 @@ button.onclick = () => {
     endGame.style.display = 'none';
     gamePlay.style.display = 'none';
     startPage.style.display = 'flex';
-    next.innerHTML = 'Next Song';
     answers.forEach(answer => {
         answer.innerHTML = '';
         answer.style.backgroundColor = '';

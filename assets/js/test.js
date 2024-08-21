@@ -301,3 +301,36 @@ restart.onclick = () => {
 //         prepareAnswers();
 //     }
 // };
+
+// // Handle answer selection
+// answers.forEach(answer => {
+//     answer.onclick = () => {
+//         if (question === 'song' && !clicked && !rightGivenAnswer) {
+//             clearInterval(countDownInterval);
+//             currentAnswer = answer.innerHTML;
+//             clicked = true;
+//             if (currentAnswer === rightAnswer) {
+//                 score++;
+//                 answer.style.backgroundColor = 'green';
+//                 rightGivenAnswer = true;
+//             } else {
+//                 answer.style.backgroundColor = 'red';
+//             }
+//             updateSongsLeft();
+//             scores.innerHTML = `Score: ${score}`;
+//             setTimeout(nextSong, 1000);        }
+//     };
+// });
+
+// Reset state for the next song
+// const resetForNextSong = () => {
+//     answers.forEach(answer => {
+//         answer.innerHTML = '';
+//         answer.style.backgroundColor = '';
+//     });  
+//     stopAllTracks();
+//     clicked = false;
+//     rightGivenAnswer = false;
+//     givenAnswer = 0;
+//     question = 'song';
+// };

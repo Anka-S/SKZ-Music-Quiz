@@ -80,6 +80,11 @@ h2 {
     --bs-btn-border-color: #171917;
     --bs-btn-bg: rgba(249, 238, 238, 0.656);
 }
+
+.answer-button {
+    transition: background-color 0.3s ease;
+}
+
 .btn-sm{
     --bs-btn-font-size: 1rem;
     padding: 10px;
