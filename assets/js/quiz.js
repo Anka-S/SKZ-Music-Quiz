@@ -8,7 +8,6 @@ const startPage = document.querySelector("#start-page")
 const endGame = document.querySelector("#endGame");
 const next = document.querySelector("#nextSong");
 const result = document.querySelector("#endGame h2");
-const timer = document.querySelector('#timer');
 
 let score = 0;
 let gameSongs = [];
@@ -32,7 +31,7 @@ startGame.onclick = () => {
 
 // Add random songs to the array
 const chooseSongs = () => {
-    while (gameSongs.length < 7) {
+    while (gameSongs.length < 10) {
         let random = Math.ceil(Math.random() * 10);
         if (!gameSongs.includes(random)) {
             gameSongs.push(random);
@@ -65,7 +64,7 @@ const prepareAnswers = () => {
     const answersData = [
         { options: ['Comflex', 'Any', 'Blurred Lines'], correct: 'Any' },
         { options: ['Thunderous', 'Circus', 'Back Door'], correct: 'Back Door' },
-        { options: ['Chk Chk Boom', 'Megaverse', 'Chaos'], correct: 'Chk Chk Boom' },
+        { options: ['Chk Chk Boom', 'Megaverse', 'La Vida Loka'], correct: 'Chk Chk Boom' },
         { options: ['Cristmas Song', 'Christmas Evel', 'Feliz Navidad'], correct: 'Christmas Evel' },
         { options: ['Leave', 'My Pace', 'Cover Me'], correct: 'Cover Me' },
         { options: ['Deep End', 'Soul', 'Deep Inside'], correct: 'Deep End' },
@@ -100,46 +99,35 @@ answers.forEach(answer => {
     };
 });
 
-// Move to the next song or end the game
-// const nextSong = () => {
-//     if (turn < 10) {
-//         turn++;
-//         resetForNextSong();
-//         playNextSong();
-//         updateNextButton();
-//     } else {
-//         showWinner();
-//     }
-// };
-
 //  Add event listener for the "Next" button
 document.addEventListener('DOMContentLoaded', () => {
     next.addEventListener('click', nextSong);
 });
 
+// Move to the next song or end the game
 const nextSong = () => {
     console.log("Next song function called"); 
-    if (turn < 7) { // Allow up to 10 turns
+    if (turn < 10) { 
         turn++;
         resetGameState();
-        setTimeout(playNextSong, 2000); // Delay before playing the next song
+        resetForNextSong();
+        setTimeout(playNextSong, 2000);
 
         // Update the 'next' button text based on the current turn
-        if (turn < 6) {
+        if (turn < 9) {
             next.innerHTML = 'Next Song';
-        } else if (turn === 6) {
+        } else if (turn === 9) {
             next.innerHTML = 'Last Song';
         } else {
             next.innerHTML = 'End';
         }
     } else {
-        winner(); // End the game and show the winner screen
+        showWinner(); 
     }
 };
 
 // Helper function to reset the game state for the next song
 const resetGameState = () => {
-    timer.innerHTML = 15; // Reset timer display
     answers.forEach(answer => {
         answer.innerHTML = '';
         answer.style.backgroundColor = 'unset';
@@ -161,17 +149,6 @@ const resetForNextSong = () => {
     question = 'song';
 };
 
-// Update the next button text
-const updateNextButton = () => {
-    if (turn < 6) {
-        next.innerHTML = 'Next Song';
-    } else if (turn === 6) {
-        next.innerHTML = 'Last Song';
-    } else {
-        next.innerHTML = 'End';
-    }
-};
-
 // Display the winner screen
 const showWinner = () => {
     gamePlay.style.display = 'none';
@@ -181,12 +158,10 @@ const showWinner = () => {
     localStorage.setItem('score', score);
 };
 
-
-
 // Restart the game
 restart.onclick = () => {
     gameSongs = [];
-    turn = 7;
+    turn = 1;
     score = 0;
     question = 'song';
     clicked = false;
