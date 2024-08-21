@@ -53,7 +53,6 @@ const chooseSongs = () => {
             gameSongs.push(random);
         }
     }
-    // console.log(gameSongs);
 };
 
 const stopAllTracks = () => {
@@ -66,11 +65,13 @@ const stopAllTracks = () => {
 // Play the current song and prepare answers
 const playSong = () => {
     if (song >= 1 && song <= 10) {
-        stopAllTracks(); // Stop any currently playing tracks
-
+        // Stop previous track
+        stopAllTracks(); 
         // Play the new track
         const currentTrack = tracks[song - 1];
         currentTrack.play();
+        // Set volume to 10% 
+        currentTrack.volume = 0.1;
         prepareAnswers();
     }
 };
@@ -111,8 +112,11 @@ answers.forEach(answer => {
                 answer.style.backgroundColor = 'red';
             }
             scores.innerHTML = `Score: ${score}`;
+            setTimeout(nextSong, 1000);
         }
     };
+    
+
 });
 
 //  Add event listener for the "Next" button
@@ -125,7 +129,7 @@ const nextSong = () => {
     if (turn < 10) { 
         turn++;
         resetForNextSong();
-        setTimeout(playNextSong, 500);
+        setTimeout(playNextSong, 1000);
 
         // Update the 'next' button text based on the current turn
         if (turn < 9) {
