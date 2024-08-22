@@ -1,7 +1,7 @@
 # SKZ Music Quiz
 
 This quiz is designed to test your knowledge of Stray Kids’s discography while having fun.
-Stray Kids is a dynamic K-Pop boy band, formed by JYP Entertainment in 2017. They known for their powerful performances and self-produced music. With a unique blend of genres and meaningful lyrics, they have captivated audiences worldwide. 
+Stray Kids is a dynamic K-Pop boy band, formed by JYP Entertainment in 2017. They are known for their powerful performances and self-produced music. With a unique blend of genres and meaningful lyrics, they have captivated audiences worldwide. 
 
 The live link can be found here - [SKZ Music Quiz](https://anka-s.github.io/SKZ-Music-Quiz/) 
 
@@ -60,7 +60,7 @@ Detailing the existing and planned features and the value they bring.
 
 - __The logo of the group image__
 
-  - Let users know the name of band
+  - Let users know the name of the band
 
 <img src = "assets/docs/features/logo.jpeg">
 
@@ -72,7 +72,7 @@ Detailing the existing and planned features and the value they bring.
 
 - __Game Play section__
 
-  - This section play the song, that user need to guess. It has *multiple* options for answer, *restart* button, *Timer* countdown and *Songs Left* score.
+  - This section plays the song, that the user needs to guess. It has *multiple* options for answer, *restart* button, *Timer* countdown and *Songs Left* score.
   - *Timer* and *Songs Left* features show the user how much time is left for guessing the song and how many songs are left till the end of the game
 
 <img src = "assets/docs/features/timer-and-songs-left.jpeg">
@@ -80,7 +80,7 @@ Detailing the existing and planned features and the value they bring.
 - __Correct/Wrong answer and Score__
 
   - When the user presses the button with the answer, it shows if this answer is correct or wrong highlighting the button with green or red color.
-  - Also user can see his current score, that icreasing when he presses the correct answer.
+  - Also user can see his current score, which icreases when he presses the correct answer.
 
   <img src = "assets/docs/features/correct-answer.jpeg">
   <img src = "assets/docs/features/wrong-answer.jpeg">
@@ -93,7 +93,7 @@ Detailing the existing and planned features and the value they bring.
 
 - __The Footer__ 
 
-  - The footer section includes links to the relevant social media sites for SKZ Music Quiz game. The links will open to a new tab to allow easy navigation for the user. 
+  - The footer section includes links to the relevant social media sites for the SKZ Music Quiz game. The links will open to a new tab to allow easy navigation for the user. 
   - The footer is valuable to the user as it encourages them to keep connected via social media
 
 <img src = "assets/docs/features/footer.jpeg">
@@ -102,7 +102,7 @@ Detailing the existing and planned features and the value they bring.
 
 - Show which answer was correct
 - Answer buttons will randomly change their position
-- Use API for more attractive and interesting game
+- Use API for the more attractive and interesting game
 
 ## Testing 
 
@@ -186,14 +186,14 @@ The live link can be found here - [SKZ Music Quiz](https://anka-s.github.io/SKZ-
 
 - Icon for webpage created with Favicon generator (https://realfavicongenerator.net/)
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-- The CDN framework used for ready made styling was [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/download/)
+- The CDN framework used for ready-made styling was [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/download/)
 - Balsamiq used for wireframe
 - [Perplexity](https://www.perplexity.ai/) used for debugging 
-- [Miro boards](https://miro.com/app/board/uXjVK1tCs_I=/) used for plunning the work process
+- [Miro boards](https://miro.com/app/board/uXjVK1tCs_I=/) used for planning the work process
 
 
 ### Media
 
-- The photo used for the background taken from [Peakpx](https://www.peakpx.com/) 
-- The image for logo taken from [Stick png](https://www.stickpng.com/img/icons-logos-emojis/iconic-brands/stray-kids-logo)
+- The photo used for the background was taken from [Peakpx](https://www.peakpx.com/) 
+- The image for the logo was taken from [Stick png](https://www.stickpng.com/img/icons-logos-emojis/iconic-brands/stray-kids-logo)
 - Songs taken from the [Internet Archive](https://archive.org/search?query=subject%3A%22Stray+Kids%22)
