@@ -168,6 +168,7 @@ const handleAnswer = (answer) => {
     }
 };
 
+// Event listeners for touch/click behavior
 answers.forEach(answer => {
     let isTouch = false;
 
@@ -197,6 +198,7 @@ const resetForNextSong = () => {
         answer.innerHTML = '';
         answer.style.backgroundColor = '';
     });  
+    // startCountdown();
     updateSongsLeft();
     stopAllTracks();
     clicked = false;
@@ -210,7 +212,7 @@ const nextSong = () => {
     if (turn < 10) { 
         turn++;
         resetForNextSong();
-        setTimeout(playNextSong, 1000);
+        setTimeout(playNextSong, 2000);
     } else {
         stopAllTracks();
         showWinner();

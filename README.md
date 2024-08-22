@@ -72,9 +72,10 @@ Detailing the existing and planned features and the value they bring.
 
 - __Game Play section__
 
-  - This section play the song, that user need to guess. It has multiple optins for answer, restart button and next song button.
+  - This section play the song, that user need to guess. It has *multiple* options for answer, *restart* button, *Timer* countdown and *Songs Left* score.
+  - *Timer* and *Songs Left* features show the user how much time is left for guessing the song and how many songs are left till the end of the game
 
-<img src = "assets/docs/features/multiple-answers.jpeg">
+<img src = "assets/docs/features/timer-and-songs-left.jpeg">
 
 - __Correct/Wrong answer and Score__
 
@@ -86,10 +87,10 @@ Detailing the existing and planned features and the value they bring.
 
 - __The End of the Game section__
 
-   - This section shows the user his final score and proposes to play again.
+   - This section shows the user how many songs he guessed and proposes to play again.
 
-   <img src = "assets/docs/features/end-of-game.jpeg">
- 
+   <img src = "assets/docs/features/end-of-the-game.jpeg">
+
 - __The Footer__ 
 
   - The footer section includes links to the relevant social media sites for SKZ Music Quiz game. The links will open to a new tab to allow easy navigation for the user. 
@@ -107,23 +108,24 @@ Detailing the existing and planned features and the value they bring.
 
 This game was tested on different devices:
 ### Desktop 
-<img src = "assets/docs/testing/desktop.png">
-<img src = "assets/docs/testing/desktop1.png">
-<img src = "assets/docs/testing/desktop2.png">
-<img src = "assets/docs/testing/desktop3.png">
-<img src = "assets/docs/testing/desktop4.png">
-
-### Iphone 12 Pro
-<img src = "assets/docs/testing/iphone12pro.png">
+<img src = "assets/docs/testing/desktop-start-page.png">
+<img src = "assets/docs/testing/desktop-game.jpeg">
+<img src = "assets/docs/testing/desktop-correctanswer.jpeg">
+<img src = "assets/docs/testing/desktop-wronganswer.png">
+<img src = "assets/docs/testing/desktop-end.jpeg">
 
 ### Redmi 8 Pro
-<img src = "assets/docs/testing/redmi8pro.jpg">
+<img src = "assets/docs/testing/redmi8prostart.jpg">
 
-### Ipad Air 2
-<img src = "assets/docs/testing/ipadair2.png">
+### iPhone 12 Pro
+<img src = "assets/docs/testing/iphone12progameplay.jpg">
 
-### Iphone SE
-<img src = "assets/docs/testing/iphonese.png">
+### iPad Air 2
+<img src = "assets/docs/testing/ipadair2.jpg">
+<img src = "assets/docs/testing/ipadair2vertical.jpg">
+
+### iPhone SE
+<img src = "assets/docs/testing/iphonesewrong.jpg">
 
 ### Validator Testing 
 
@@ -152,8 +154,16 @@ It returned scores of 98, 100, 100 & 100 on desktop devices and 89, 100, 100 & 1
 
 ### Unfixed Bugs
 
-- The logo image goes over the game section on several devices.
-<img src = "assets/docs/testing/IphonSE.jpg">
+- The logo image goes over the game section and creates white space on small devices such as iPhone SE
+<img src = "assets/docs/bugs/iphonesebug.jpg">
+
+- On Apple devices, after choosing the answer, the answer button still highlights with a grey colour through the next turns till you will not select another answer or tap somewhere else on the screen of the phone.
+<img src = "assets/docs/bugs/iphone12procorrect+bug.jpg">
+<img src = "assets/docs/bugs/iphone12proanswerbug.jpg">
+
+- On some Apple devices (such as iPad Air 2 and iPhone SE) the song plays only on the first turn.
+
+- On Apple devices, sometimes songs don't play after the automatic switch when the countdown is over. And it works again after you select an answer.
 
 
 ## Deployment
