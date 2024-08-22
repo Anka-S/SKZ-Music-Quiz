@@ -59,6 +59,7 @@ h2 {
 
 }
 
+/* -----------Start Game, Reset and Play again button */
 .btn-success {
     --bs-btn-color: #fff;
     --bs-btn-bg: #be1b2c;
@@ -75,29 +76,25 @@ h2 {
     --bs-btn-disabled-bg: #be1b2c8c;
     --bs-btn-disabled-border-color: #000;
 }
+
+/* ----------------Answers button */
 .btn-outline-secondary{
     --bs-btn-color: #17191a;
     --bs-btn-border-color: #171917;
     --bs-btn-bg: rgba(249, 238, 238, 0.656);
 }
 
-.answer-button {
-    transition: background-color 0.3s ease;
-}
-
 .btn-sm{
     --bs-btn-font-size: 1rem;
     padding: 10px;
 }
+
 .btn-lg {
     --bs-btn-font-size: 1.5rem;
     padding: 10px;
 }
 
-#songs div{
-    display: none;
-}
-
+/* -----------Game section */
 #gamePlay{
     display: none;
     text-align: center;
@@ -106,7 +103,7 @@ h2 {
   font-weight: 500;
 }
 
-
+/* ------------End of the game section */
 #endGame {
     display: none;
   text-align: center;
@@ -117,6 +114,7 @@ h2 {
 .game #endGame {
     height: 200px;
 }
+
 /* ---------------Footer */
 .footer-container  {
     height: 50px;

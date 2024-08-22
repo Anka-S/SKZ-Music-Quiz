@@ -80,8 +80,8 @@ const assignSong = () => {
 
 // Add random songs to the array
 const chooseSongs = () => {
-    while (gameSongs.length < 10) {
-        let random = Math.ceil(Math.random() * 10);
+    while (gameSongs.length < 27) {
+        let random = Math.ceil(Math.random() * 27);
         if (!gameSongs.includes(random)) {
             gameSongs.push(random);
         }
@@ -97,7 +97,7 @@ const stopAllTracks = () => {
 
 // Play the current song and prepare answers
 const playSong = () => {
-    if (song >= 1 && song <= 10) {
+    if (song >= 1 && song <= 27) {
         // Stop previous track
         stopAllTracks(); 
         // Play the new track
@@ -122,7 +122,24 @@ const prepareAnswers = () => {
         { options: ['God`s Menu', 'Heaven', 'Social Path'], correct: 'Heaven' },
         { options: ['Maniac', 'Lalala', 'Feel the Rock'], correct: 'Lalala' },
         { options: ['Red Lights', 'Fake Eyes', 'Taste'], correct: 'Taste' },
-        { options: ['Topline', 'Domino', 'Boom'], correct: 'Topline' }
+        { options: ['Topline', 'Domino', 'Boom'], correct: 'Topline' },
+        { options: ['Taste', 'Charmer', 'Drive'], correct: 'Charmer'},
+        { options: ['Megaverse', 'La Vida Loka', 'Chk Chk Boom'], correct: 'Chk Chk Boom'},
+        { options: ['Circus', 'Zone', 'Domino'], correct: 'Circus'},
+        { options: ['Boom', 'Topline', 'Domino'], correct: 'Domino'},
+        { options: ['Drive', 'Ride', 'All Night'], correct: 'Drive'},
+        { options: ['5 Star', 'God`s Menu', 'Du du du'], correct: 'God`s Menu'},
+        { options: ['Call My Name', 'Fame', 'Hall of Fame'], correct: 'Hall of Fame'},
+        { options: ['PacMan', 'Item', 'Game'], correct: 'Item'},
+        { options: ['Maniac', 'S-Class', 'Lalala'], correct: 'Maniac'},
+        { options: ['Universe', 'Thunderous', 'Megaverse'], correct: 'Megaverse'},
+        { options: ['Stray Kids', 'Mirror', 'Miroh'], correct: 'Miroh'},
+        { options: ['Taste', 'You', 'Red Lights'], correct: 'Red Lights'},
+        { options: ['Miroh', 'Side Effects', 'Mirror'], correct: 'Side Effects'},
+        { options: ['Sorry I Love You', 'Heaven', 'DLMLU'], correct: 'Sorry I Love You'},
+        { options: ['Hell Kitchen', 'Super Bowl', 'Topline'], correct: 'Super Bowl'},
+        { options: ['The Sound', 'Heaven', 'Side Effects'], correct: 'The Sound'},
+        { options: ['Back Door', 'Thunderous', 'Circus'], correct: 'Thunderous'},
     ];
 
     const { options, correct } = answersData[song - 1];
@@ -132,6 +149,7 @@ const prepareAnswers = () => {
     rightAnswer = correct;
 };
 
+// Handle answer selection
 const handleAnswer = (answer) => {
     if (question === 'song' && !clicked && !rightGivenAnswer) {
         clearInterval(countDownInterval);
@@ -179,6 +197,7 @@ const resetForNextSong = () => {
         answer.innerHTML = '';
         answer.style.backgroundColor = '';
     });  
+    updateSongsLeft();
     stopAllTracks();
     clicked = false;
     rightGivenAnswer = false;
@@ -191,12 +210,10 @@ const nextSong = () => {
     if (turn < 10) { 
         turn++;
         resetForNextSong();
-        updateSongsLeft();
         setTimeout(playNextSong, 1000);
     } else {
         stopAllTracks();
         showWinner();
-        clearInterval(countDownInterval);
     }
 };
 
@@ -204,9 +221,7 @@ const nextSong = () => {
 const showWinner = () => {
     gamePlay.style.display = 'none';
     endGame.style.display = 'block';
-    result.innerHTML = `Well done! <br> Your total score: ${score} of 10`;
-    // Save the score to local storage
-    localStorage.setItem('score', score);
+    result.innerHTML = `Well done! <br> Your final score: <br> ${score} of 10`;
 };
 
 // Restart the game

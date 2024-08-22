@@ -3,6 +3,8 @@
 This quiz is designed to test your knowledge of Stray Kids’s discography while having fun.
 Stray Kids is a dynamic K-Pop boy band, formed by JYP Entertainment in 2017. They known for their powerful performances and self-produced music. With a unique blend of genres and meaningful lyrics, they have captivated audiences worldwide. 
 
+The live link can be found here - [SKZ Music Quiz](https://anka-s.github.io/SKZ-Music-Quiz/) 
+
 <img src = "assets/docs/responsive-design.jpeg">
 
 ## UX/UI
@@ -163,7 +165,7 @@ This section should describe the process you went through to deploy the project 
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - [SKZ Music Quiz](http://anka-s.github.io/skz-music-quiz/) 
+The live link can be found here - [SKZ Music Quiz](https://anka-s.github.io/SKZ-Music-Quiz/) 
 
 
 ## Credits 
